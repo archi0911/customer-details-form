@@ -1,0 +1,63 @@
+.form-container {
+    max-width: 800px;
+    border: 1px solid #ccc; 
+    margin: 50px auto; 
+    padding: 20px;
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+}
+
+#fname {
+    width: 380px;
+}
+
+#lname {
+    width: 380px;
+}
+
+#address {
+    width: 775px;
+}
+
+#address2 {
+    width: 775px;
+}
+
+#city {
+    width: 380px;
+}
+#stateProvince {
+    width: 380px;
+}
+
+#postalZip {
+    width: 775px;
+}
+
+#phone {
+    width: 380px;
+}
+
+#email {
+    width: 380px;
+}
+
+#dropdown {
+    width: 380px;
+}
+
+#feedback {
+    width: 750px;
+    height: 80px;
+}
+
+#suggestions {
+    width: 750px;
+    height: 80px;
+
+}
+
+table, th, tr, td {
+  border: 1px solid black;
+}
+

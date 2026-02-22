@@ -4,62 +4,100 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Customer Details</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h2>Customer Details</h2>
-	<hr>
-  <div>
-    <form>
-    <label>Full Name: 
-      <br>
-      <input type="text" id="fname" name="fname" placeholder="First Name">
-      <input type="text" id="lname" name="lname" placeholder="Last Name">
-    </label>
-    <br><br>
+  <script src="script.js"></script>
+  <div class="form-container">
+    <h2>Customer Details</h2>
+	  <hr>
+    <form id="customer-form" onsubmit="return validateForm()">
+      <label>Full Name: 
+        <br>
+        <input type="text" id="fname" name="fname" placeholder="First Name">
+        <input type="text" id="lname" name="lname" placeholder="Last Name">
+      </label>
+      <br><br>
 
-    <label for="address">Address</label><br>
-    <input type="text" id="address" name="address" placeholder="address">   
-    <br><br>
-    
-    <label for="phone">Phone No:</label><br>
-    <input type="number" id="phone" name="phone" placeholder="(+91 00000 00000)">
-    <br><br>
+      <label for="address">Address: 
+        <br>
+        <input type="text" id="address" name="address" placeholder="Street Address"><br><br>  
+        <input type="text" id="address2"name="address2" placeholder="Street Address-2"><br><br>  
+        <input type="text" id="city" name="city" placeholder="City">
+        <input type="text" id="stateProvince" name="stateProvince" placeholder="State/Province"><br><br>  
+        <input type="text" id="postalZip" name="postalZip" placeholder="Postal/Zip Code">
+      </label>
+      <br><br>
+      
+      <label for="phone">Phone No:</label><br>
+      <input type="number" id="phone" name="phone" placeholder="(+91 00000 00000)">
+      <br><br>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" placeholder="ex: email@gmail.com">
-    <br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="ex: email@gmail.com">
+      <br><br>
 
-    <label for="dropdown">How did you hear about us?</label><br>
-    <select id="dropdown" name="dropdown">
-      <option disabled selected>Please select an option</option>
-      <option value="Friends">Friends</option>
-      <option value="Family">Family</option>
-      <option value="Internet">Internet</option>
-      <option value="Collegues">Collegues</option>
-    </select>
-    <br><br>
+      <label for="dropdown">How did you hear about us?</label><br>
+      <select id="dropdown" name="dropdown">
+        <option disabled selected>Please select an option</option>
+        <option value="Friends">Friends</option>
+        <option value="Family">Family</option>
+        <option value="Internet">Internet</option>
+        <option value="Collegues">Collegues</option>
+      </select>
+      <br><br>
 
-    <label for="feedback">Feedback about us:</label><br>
-    <textarea id="feedback" name="feedback" rows="4" cols="24"></textarea>
-    <br><br>
+      <label for="feedback">Feedback about us:</label><br>
+      <textarea id="feedback" name="feedback"></textarea>
+      <br><br>
 
-    <label for="suggestions">Suggestions if any for further improvement:</label><br>
-    <textarea id="suggestions" name="suggestions" rows="4" cols="24"></textarea>
-    <br><br>
+      <label for="suggestions">Suggestions if any for further improvement:</label><br>
+      <textarea id="suggestions" name="suggestions"></textarea>
+      <br><br>
 
-    <label for="checkbox">Will you be willing to recommend us ?</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-    <br><br>
+      <label for="checkbox">Will you be willing to recommend us ?</label>
+      <input type="checkbox" id="checkbox" name="checkbox">
+      <br><br>
 
-    <label for="gender">Gender: 
-      <input type="radio" id="male" name="male">
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="female">
-      <label for="female">Female</label>
-      <input type="radio" id="others" name="others">
-      <label for="others">Others</label>
-    </label>	
+      <label for="gender">Gender: 
+        <input type="radio" id="male" name="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender">
+        <label for="female">Female</label>
+        <input type="radio" id="others" name="gender">
+        <label for="others">Others</label>
+      </label>	
+      <br><br>
+
+      <table id="table">
+        <tr>
+          <th></th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>Contact Number</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+         <tr>
+          <td>2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <hr>
+      <label for="submit"></label>
+      <input type="submit" id="submit" name="submit">
+    </form>
   </div>
 	
+
+  
+
 </body>
 </html>
