@@ -1,74 +1,90 @@
 function validateForm() {
-
-  let fname = document.getElementById("fname").value;
-  let lname = document.getElementById("lname").value;
-  let address = document.getElementById("address").value;
-  let address2 = document.getElementById("address2").value;
-  let stateProvince = document.getElementById("stateProvince").value;
-  let city = document.getElementById("city").value;
-  let postalZip = document.getElementById("postalZip").value;
-	let email = document.getElementById("email").value;
-	let feedback = document.getElementById("feedback").value;
-	let suggestions = document.getElementById("suggestions").value;
-
-
-	let gender = document.querySelector('input[name="gender"]:checked');
-	
-
-  if (fname.trim() === "") {
-    alert("First name must be filled out");
-    return false;
-  }
-
-   if (lname.trim() === "") {
-    alert("Last name must be filled out");
-    return false;
-  }
-
-  if (address.trim() === "") {
-    alert("Address must be filled out");
-    return false;
-  }
-  
-  if (address2.trim() === "") {
-    alert("Specify nearby landmarks");
-    return false;
-  }
-
-  if (city.trim() === "") {
-    alert("City must be mentioned");
-    return false;
-  }
-
-   if (stateProvince.trim() === "") {
-    alert("State must be filled out");
-    return false;
-  }
-
-  if (postalZip.trim() === "") {
-    alert("Postal/ Zip Code is required");
-    return false;
-  }
-
-  if (email.trim() === "") {
-    alert("Email must be filled out");
-    return false;
-  }
-
-	if (feedback.trim() === "") {
-    alert("Feedback is required");
-    return false;
-  }
-
-	if (suggestions.trim() === "") {
-    alert("Suggestions must be given");
-    return false;
-  }
-
-	if (!gender) {
-		alert("Please select your gender");
-		return false;
-	}
-
-  return true; 
 }
+
+function validateFname(fname) {
+  const a = /^[a-zA-Z]+$/;
+
+  let result = fname.match(a);
+
+  if (result !== null) {
+    console.log("Valid First Name");
+  } else {
+    console.log("Invalid First Name");
+  }
+}
+
+function validateLname(lname) {
+  const a = /^[a-zA-Z]+$/;
+
+  let result = lname.match(a);
+
+  if (result !== null) {
+    console.log("Valid Last Name");
+  } else {
+    console.log("Invalid Last Name");
+  }
+}
+
+function validateCity (city) {
+  const c = /^[a-zA-Z]+$/;
+
+  let result = city.match(c);
+
+  if (result !== null) {
+    console.log("Valid City Name");
+  } else {
+    console.log("Invalid City Name");
+  }
+}
+
+function validateState (state) {
+  const s = /^[a-zA-Z]+$/;
+
+  let result = state.match(s);
+
+  if (result !== null) {
+    console.log("Valid State Name");
+  } else {
+    console.log("Invalid State Name");
+  }
+}
+
+function validatePincode (pincode) {
+  const code = /^[1-9][0-9]{5}$/; 
+
+  let result = pincode.match(code);
+
+  if (result !== null) {
+    console.log("Valid Pincode");
+  } else {
+    console.log("Invalid Pincode");
+  }
+
+}
+
+function validatePhone(phone) {
+  const ph = /^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/; 
+
+  let result = phone.match(ph);
+
+  if (result !== null) {
+    console.log("Valid Phone Number");
+  } else {
+    console.log("Invalid Phone Number");
+  }
+
+}
+
+function validateEmail(email) {
+  const e = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  let result = email.match(e);
+
+  if (result !== null) {
+    console.log("Valid Email");
+  } else {
+    console.log("Invalid Email");
+  }
+}
+
+
