@@ -195,6 +195,7 @@ function validateTable() {
 function displayData() {
   let fname = document.getElementById("fname").value;
   let lname = document.getElementById("lname").value;
+  let address = document.getElementById("address").value;
   let city = document.getElementById("city").value;
   let state = document.getElementById("stateProvince").value;
   let pincode = document.getElementById("postalZip").value;
@@ -206,6 +207,7 @@ function displayData() {
   document.getElementById("details").innerHTML = "<br>" + "<hr>" + "<h2>Customer Details</h2>" +
   "<br>"  + "First Name: " + fname + 
   "<br>" + "Last Name: " + lname + 
+  "<br>" + "Address: " + address +  
   "<br>" + "City: " + city + 
   "<br>" + "State: " + state +
   "<br>" + "Pincode: " + pincode +
