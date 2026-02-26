@@ -8,11 +8,11 @@
 </head>
 <body>
   <script src="script.js"></script>
-  <div class="form-container">
+  <div class="form-container" >
     <h2>Customer Details</h2>
 	  <hr>
     <form id="customer-form" onsubmit="return validateForm()">
-      <label>Full Name: 
+      <label class="required-field">Full Name:</label> 
       <br>
       <div style="display: flex; gap: 20px;">
         <div style="flex: 1;">
@@ -23,11 +23,11 @@
           <input type="text" id="lname" name="lname" placeholder="Last Name" onblur="validateLname()" style="width: 100%; padding: 8px;">
           <span id="lname-error" style="color:red;"></span>
         </div>
-        </div>
-      </label>
+      </div>
+      
       <br>
 
-      <label for="address">Address: 
+      <label for="address" class="required-field">Address:</label>
         <br>
 
         <input type="text" id="address" name="address" placeholder="Street Address" onblur="validateAddress(this)">
@@ -47,24 +47,24 @@
           </div>
         </div>
 
-        <input type="text" id="postalZip" name="postalZip" placeholder="Pincode" onblur="validatePincode()">
+        <input type="text" id="postalZip" name="postalZip" placeholder="Pincode" maxlength="6" onblur="validatePincode()">
         <span id="pincode-error" style="color:red;"></span>
-      </label>
-      <br>
       
-      <label for="phone">Phone No:</label><br>
-      <input type="text" id="phone" name="phone" placeholder="(+91 00000 00000)" onblur="validatePhone()">
+      <br><br>
+      
+      <label for="phone" class="required-field">Phone No:</label><br>
+      <input type="text" id="phone" name="phone" placeholder="(+91 00000 00000)" maxlength="10" onblur="validatePhone()">
       <span id="phone-error" style="color:red;"></span>
 
       <br><br>
 
-      <label for="email">Email:</label><br>
+      <label for="email" class="required-field">Email:</label><br>
       <input type="email" id="email" name="email" placeholder="ex: email@gmail.com" onblur="validateEmail()">
       <span id="email-error" style="color:red;"></span>
 
       <br><br>
 
-      <label for="dropdown">How did you hear about us?</label><br>
+      <label for="dropdown" class="required-field">How did you hear about us?</label><br>
       <select id="dropdown" name="dropdown" onblur="validateDropdown()">
         <option disabled selected>Please select an option</option>
         <option value="Friends">Friends</option>
@@ -76,26 +76,26 @@
 
       <br><br>
 
-      <label for="feedback">Feedback about us:</label><br>
+      <label for="feedback" class="required-field">Feedback about us:</label><br>
       <textarea id="feedback" name="feedback" onblur="validateFeedback()"></textarea>
       <span id="feedback-error" style="color:red;"></span>
 
       <br><br>
 
-      <label for="suggestions">Suggestions if any for further improvement:</label><br>
+      <label for="suggestions" class="required-field">Suggestions if any for further improvement:</label><br>
       <textarea id="suggestions" name="suggestions" onblur="validateSuggestion()"></textarea>
       <span id="suggestion-error" style="color:red;"></span>
 
       <br><br>
 
-      <label for="checkbox">Will you be willing to recommend us ?</label>
-      <input type="checkbox" id="checkbox" name="checkbox" onblur="validateCheckbox()">
+      <label for="checkbox" class="required-field">Will you be willing to recommend us ?</label>
+      <input type="checkbox" id="checkbox" name="checkbox" onblur="validateCheckbox()">Yes
       <span id="checkbox-error" style="color:red;"></span>
 
       <br><br>
       
       <div id="gender-group" onfocusout="validateGender()">
-        <label>Gender:</label>
+        <label class="required-field">Gender:</label>
 
         <input type="radio" name="gender" value="Male"> Male
         <input type="radio" name="gender" value="Female"> Female
@@ -116,13 +116,13 @@
           <td>1</td>
           <td><input type="text" class="name" onblur="validateTable()"></td>
           <td><input type="text" class="address" onblur="validateTable()"></td>
-          <td><input type="text" class="contact" onblur="validateTable()"></td>
+          <td><input type="text" class="contact" maxlength="10" onblur="validateTable()"></td>
         </tr>
         <tr>
           <td>2</td>
           <td><input type="text" class="name" onblur="validateTable()"></td>
           <td><input type="text" class="address" onblur="validateTable()"></td>
-          <td><input type="text" class="contact" onblur="validateTable()"></td>
+          <td><input type="text" class="contact" maxlength="10" onblur="validateTable()"></td>
         </tr>
       </table>
       <span id="table-error" style="color:red;"></span>
@@ -130,6 +130,8 @@
       <hr>
       <label for="submit"></label>
       <input type="submit" id="submit" name="submit">
+
+      <div id="details"></div>
     </form>
   </div>
 

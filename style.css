@@ -38,6 +38,11 @@ body {
     box-sizing: border-box;
 }
 
+.required-field::after {
+    content: "*";
+    color: red;
+}
+
 /* Side by side fields */
 #fname,
 #lname,

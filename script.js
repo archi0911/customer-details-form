@@ -13,7 +13,10 @@ function validateForm() {
   if (!validateGender()) return false;
   if (!validateTable()) return false;
 
-  return true;
+  alert("Validation Successful");
+  displayData(); 
+
+  return false;  
 }
 
 function validateFname() {
@@ -92,7 +95,8 @@ function validatePhone() {
   const phone = document.getElementById("phone").value;
   const error = document.getElementById("phone-error");
 
-  const ph = /^[6-9][0-9]{9}$/;
+  // const ph = /^[6-9][0-9]{9}$/;
+  const ph = /^[6-9]\d{9}$/;
 
   if (ph.test(phone)) error.innerHTML = "";
   else error.innerHTML = "Invalid Phone Number";
@@ -122,23 +126,11 @@ function validateDropdown() {
 }
 
 function validateFeedback() {
-  const feedback = document.getElementById("feedback").value;
-  const error = document.getElementById("feedback-error");
-
-  const f = /^[a-zA-Z0-9.,!?'\- ]+$/;
-
-  if (f.test(feedback)) error.innerHTML = "";
-  else error.innerHTML = "Invalid Feedback";
+  document.getElementById("feedback-error").innerHTML = "";
 }
 
 function validateSuggestion() {
-  const suggestion = document.getElementById("suggestions").value;
-  const error = document.getElementById("suggestion-error");
-
-  const s = /^[a-zA-Z0-9.,!?'\- ]+$/;
-
-  if (s.test(suggestion)) error.innerHTML = "";
-  else error.innerHTML = "Invalid Suggestion";
+  document.getElementById("suggestion-error").innerHTML = "";
 }
 
 function validateCheckbox() {
@@ -178,29 +170,49 @@ function validateGender() {
 
 function validateTable() {
 
-  let names = document.querySelectorAll(".name");
-  let addresses = document.querySelectorAll(".address");
-  let contacts = document.querySelectorAll(".contact");
-  let error = document.getElementById("table-error");
+  const names = document.querySelectorAll(".name");
+  const addresses = document.querySelectorAll(".address");
+  const contacts = document.querySelectorAll(".contact");
+  const error = document.getElementById("table-error");
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < names.length; i++) {
 
-    if (
-      names[i].value.trim() === "" ||
-      addresses[i].value.trim() === "" ||
-      contacts[i].value.trim() === ""
-    ) {
+    if (!names[i].value || !addresses[i].value || !contacts[i].value) {
       error.innerHTML = "All fields required in Row " + (i + 1);
       return false;
     }
 
-    if (!/^[0-9]{10}$/.test(contacts[i].value.trim())) {
-      error.innerHTML = "Invalid contact number in Row " + (i + 1);
+    if (!/^\d{10}$/.test(contacts[i].value)) {
+      error.innerHTML = "Contact must be exactly 10 digits (Row " + (i + 1) + ")";
       return false;
     }
   }
 
   error.innerHTML = "";
-  alert("Validation Successful ✅");
   return true;
+}
+
+function displayData() {
+  let fname = document.getElementById("fname").value;
+  let lname = document.getElementById("lname").value;
+  let city = document.getElementById("city").value;
+  let state = document.getElementById("stateProvince").value;
+  let pincode = document.getElementById("postalZip").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let dropdown = document.getElementById("dropdown").value;
+  let gender = document.querySelector('input[name="gender"]:checked')?.value;
+
+  document.getElementById("details").innerHTML = "<br>" + "<hr>" + "<h2>Customer Details</h2>" +
+  "<br>"  + "First Name: " + fname + 
+  "<br>" + "Last Name: " + lname + 
+  "<br>" + "City: " + city + 
+  "<br>" + "State: " + state +
+  "<br>" + "Pincode: " + pincode +
+  "<br>" + "Phone No: " + phone +
+  "<br>" + "Email: " + email +
+  "<br>" + "Recommend: " + dropdown +
+  "<br>" + "Gender: " + gender 
+  ;
+  // document.getElementById("details").innerHTML =  ;
 }
