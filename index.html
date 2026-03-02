@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Customer Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container" >
+    <h2>Customer Details</h2>
+	  <hr>
+    <form id="customer-form" onsubmit="return validateForm()">
+      <label class="required-field">Full Name:</label> 
+      <br>
+      <div style="display: flex; gap: 20px;">
+        <div style="flex: 1;">
+          <input type="text" id="fname" name="fname" placeholder="First Name" onblur="validateFname()" style="width: 100%; padding: 8px;">
+          <span id="fname-error" style="color:red;"></span>
+        </div>
+        <div style="flex: 1;">
+          <input type="text" id="lname" name="lname" placeholder="Last Name" onblur="validateLname()" style="width: 100%; padding: 8px;">
+          <span id="lname-error" style="color:red;"></span>
+        </div>
+      </div>
+      
+      <br>
+
+      <label for="address" class="required-field">Address:</label>
+        <br>
+
+        <input type="text" id="address" name="address" placeholder="Street Address" onblur="validateAddress(this)">
+        <span id="address-error" style="color:red;"></span>
+
+        <input type="text" id="address2" name="address2" placeholder="Street Address-2" onblur="validateAddress(this)">
+        <span id="address2-error" style="color:red;"></span>
+
+        <div style="display: flex; gap: 20px;">
+          <div style="flex: 1;">
+            <input type="text" id="city" name="city" placeholder="City" onblur="validateCity()" style="width: 100%; padding: 8px;">
+            <span id="city-error" style="color:red;"></span>
+          </div>
+          <div style="flex: 1;">
+            <input type="text" id="stateProvince" name="stateProvince" placeholder="State/Province" onblur="validateState()" style="width: 100%; padding: 8px;">
+            <span id="state-error" style="color:red;"></span>
+          </div>
+        </div>
+
+        <input type="text" id="postalZip" name="postalZip" placeholder="Pincode" maxlength="6" onblur="validatePincode()">
+        <span id="pincode-error" style="color:red;"></span>
+      
+      <br><br>
+      
+      <label for="phone" class="required-field">Phone No:</label><br>
+      <input type="text" id="phone" name="phone" placeholder="(+91 00000 00000)" maxlength="10" onblur="validatePhone()">
+      <span id="phone-error" style="color:red;"></span>
+
+      <br><br>
+
+      <label for="email" class="required-field">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="ex: email@gmail.com" onblur="validateEmail()">
+      <span id="email-error" style="color:red;"></span>
+
+      <br><br>
+
+      <label for="dropdown" class="required-field">How did you hear about us?</label><br>
+      <select id="dropdown" name="dropdown" onblur="validateDropdown()">
+        <option disabled selected>Please select an option</option>
+        <option value="Friends">Friends</option>
+        <option value="Family">Family</option>
+        <option value="Internet">Internet</option>
+        <option value="Collegues">Collegues</option>
+      </select>
+      <span id="dropdown-error" style="color:red;"></span>
+
+      <br><br>
+
+      <label for="feedback" class="required-field">Feedback about us:</label><br>
+      <textarea id="feedback" name="feedback" onblur="validateFeedback()"></textarea>
+      <span id="feedback-error" style="color:red;"></span>
+
+      <br><br>
+
+      <label for="suggestions" class="required-field">Suggestions if any for further improvement:</label><br>
+      <textarea id="suggestions" name="suggestions" onblur="validateSuggestion()"></textarea>
+      <span id="suggestion-error" style="color:red;"></span>
+
+      <br><br>
+
+      <label for="checkbox" class="required-field">Will you be willing to recommend us ?</label>
+      <input type="checkbox" id="checkbox" name="checkbox" onblur="validateCheckbox()">Yes
+      <span id="checkbox-error" style="color:red;"></span>
+
+      <br><br>
+      
+      <div id="gender-group" onfocusout="validateGender()">
+        <label class="required-field">Gender:</label>
+
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Others"> Others
+      </div>
+      <span id="radio-error" style="color:red;"></span>
+
+      <br><br>
+
+      <table id="table">
+        <tr>
+          <th>No</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>Contact</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><input type="text" id="name1" class="name" onblur="validateTable()"></td>
+          <td><input type="text" id="add1" class="address" onblur="validateTable()"></td>
+          <td><input type="text" id="contact1" class="contact" maxlength="10" onblur="validateTable()"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><input type="text" id="name2" class="name" onblur="validateTable()"></td>
+          <td><input type="text" id="add2" class="address" onblur="validateTable()"></td>
+          <td><input type="text" id="contact2" class="contact" maxlength="10" onblur="validateTable()"></td>
+        </tr>
+      </table>
+      <span id="table-error" style="color:red;"></span>
+
+      <hr>
+      <label for="submit"></label>
+      <input type="submit" id="submit" name="submit">
+
+      <div id="details"></div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
