@@ -194,35 +194,44 @@ function validateTable() {
 
 function displayData() {
   let fname = document.getElementById("fname").value;
-  let lname = document.getElementById("lname").value;
-  let address = document.getElementById("address").value;
-  let address2 = document.getElementById("address2").value;
-  let city = document.getElementById("city").value;
-  let state = document.getElementById("stateProvince").value;
-  let pincode = document.getElementById("postalZip").value;
-  let phone = document.getElementById("phone").value;
-  let email = document.getElementById("email").value;
-  let dropdown = document.getElementById("dropdown").value;
-  let gender = document.querySelector('input[name="gender"]:checked')?.value;
-  let name1 = document.getElementById("name1").value;
-  let add1 = document.getElementById("add1").value;
-  let contact1 = document.getElementById("contact1").value;
-  let name2 = document.getElementById("name2").value;
-  let add2 = document.getElementById("add2").value;
-  let contact2 = document.getElementById("contact2").value;
+  localStorage.setItem("fname", fname);
 
-  document.getElementById("details").innerHTML = "<br>" + "<hr>" + "<h2>Customer Details</h2>" +
-  "<br>"  + "First Name: " + fname + 
-  "<br>" + "Last Name: " + lname + 
-  "<br>" + "Address: " + address +  address2 +
-  "<br>" + "City: " + city + 
-  "<br>" + "State: " + state +
-  "<br>" + "Pincode: " + pincode +
-  "<br>" + "Phone No: " + phone +
-  "<br>" + "Email: " + email +
-  "<br>" + "Recommend: " + dropdown +
-  "<br>" + "Gender: " + gender +
-  "<br>" + "Full Name: " + name1 + "&nbsp" + "Address: " + add1 + "&nbsp" + "Contact No: " + contact1 +
-  "<br>" + "Full Name: " + name2 + "&nbsp" + "Address: " + add2 + "&nbsp" + "Contact No: " + contact2;
-  // document.getElementById("details").innerHTML =  ;
+  let fname1 = localStorage.getItem("fname");
+  console.log("fname:", fname1);
 }
+
+
+// function displayData() {
+//   let fname = document.getElementById("fname").value;
+//   let lname = document.getElementById("lname").value;
+//   let address = document.getElementById("address").value;
+//   let address2 = document.getElementById("address2").value;
+//   let city = document.getElementById("city").value;
+//   let state = document.getElementById("stateProvince").value;
+//   let pincode = document.getElementById("postalZip").value;
+//   let phone = document.getElementById("phone").value;
+//   let email = document.getElementById("email").value;
+//   let dropdown = document.getElementById("dropdown").value;
+//   let gender = document.querySelector('input[name="gender"]:checked')?.value;
+//   let name1 = document.getElementById("name1").value;
+//   let add1 = document.getElementById("add1").value;
+//   let contact1 = document.getElementById("contact1").value;
+//   let name2 = document.getElementById("name2").value;
+//   let add2 = document.getElementById("add2").value;
+//   let contact2 = document.getElementById("contact2").value;
+
+//   document.getElementById("details").innerHTML = "<br>" + "<hr>" + "<h2>Customer Details</h2>" +
+//   "<br>"  + "First Name: " + fname + 
+//   "<br>" + "Last Name: " + lname + 
+//   "<br>" + "Address: " + address +  address2 +
+//   "<br>" + "City: " + city + 
+//   "<br>" + "State: " + state +
+//   "<br>" + "Pincode: " + pincode +
+//   "<br>" + "Phone No: " + phone +
+//   "<br>" + "Email: " + email +
+//   "<br>" + "Recommend: " + dropdown +
+//   "<br>" + "Gender: " + gender +
+//   "<br>" + "Full Name: " + name1 + "&nbsp" + "Address: " + add1 + "&nbsp" + "Contact No: " + contact1 +
+//   "<br>" + "Full Name: " + name2 + "&nbsp" + "Address: " + add2 + "&nbsp" + "Contact No: " + contact2;
+//   // document.getElementById("details").innerHTML =  ;
+// }
